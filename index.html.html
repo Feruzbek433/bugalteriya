@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinBalance — Professional Buxgalteriya va Soliq Xizmatlari</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#16284c',
+                            900: '#0B192C',
+                            950: '#060e1a',
+                        },
+                        emerald: {
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white overflow-x-hidden">
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-emerald-400 shadow-lg shadow-navy-900/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-chart-pie text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-navy-900 block leading-none">Fin<span class="text-emerald-600">Balance</span></span>
+                        <span class="text-[11px] font-medium text-slate-500 tracking-wider uppercase">Buxgalteriya & Audit</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#xizmatlar" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Xizmatlar</a>
+                    <a href="#afzalliklar" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Biz haqimizda</a>
+                    <a href="#kalkulyator" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Kalkulyator</a>
+                    <a href="#tariflar" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Tariflar</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Savol-javob</a>
+                </nav>
+
+                <!-- CTA & Phone -->
+                <div class="hidden md:flex items-center gap-5">
+                    <a href="tel:+998712005500" class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <span class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </span>
+                        +998 (71) 200-55-00
+                    </a>
+                    <a href="#aloqa" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold shadow-md shadow-emerald-600/20 transition-all hover:-translate-y-0.5">
+                        Bepul maslahat
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Menyuni ochish" class="lg:hidden p-2.5 rounded-xl text-navy-900 hover:bg-slate-100 transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="#xizmatlar" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Xizmatlar</a>
+            <a href="#afzalliklar" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Biz haqimizda</a>
+            <a href="#kalkulyator" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Xizmat kalkulyatori</a>
+            <a href="#tariflar" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Tariflar</a>
+            <a href="#faq" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Ko'p beriladigan savollar</a>
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-3">
+                <a href="tel:+998712005500" class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-100 text-navy-900 font-semibold">
+                    <i class="fa-solid fa-phone text-emerald-600"></i> +998 (71) 200-55-00
+                </a>
+                <a href="#aloqa" class="mobile-link text-center py-3 rounded-xl bg-emerald-600 text-white font-semibold shadow-md">
+                    Bepul maslahat olish
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-navy-900 text-white overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-emerald-500 blur-3xl"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-blue-500 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-slate-700/80 text-emerald-400 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        O'zbekiston bo'ylab ishonchli moliyaviy hamkor
+                    </div>
+
+                    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[52px] leading-[1.15] tracking-tight">
+                        Biznesingiz moliyasini <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">professionallarga</span> ishoning
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Buxgalteriya hisobini to'liq yuritish, soliqlarni qonuniy optimallashtirish va moliyaviy audit. Siz biznesingizni rivojlantirishga e'tibor qarating — hisobotlar va tekshiruvlarni biz hal qilamiz.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#aloqa" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold text-base shadow-lg shadow-emerald-500/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>Bepul maslahat olish</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#kalkulyator" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-base backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-emerald-400"></i>
+                            <span>Xizmat narxini hisoblash</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="pt-6 border-t border-slate-800 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-heading font-extrabold text-2xl sm:text-3xl text-white">10+</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Yillik tajriba</p>
+                        </div>
+                        <div>
+                            <p class="font-heading font-extrabold text-2xl sm:text-3xl text-emerald-400">350+</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Doimiy mijozlar</p>
+                        </div>
+                        <div>
+                            <p class="font-heading font-extrabold text-2xl sm:text-3xl text-white">0 so'm</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Soliq jarimalari</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Dashboard Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-800/90 backdrop-blur-md border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                        <!-- Floating Badge -->
+                        <div class="absolute -top-4 -right-3 sm:-right-5 bg-emerald-500 text-navy-950 font-bold text-xs px-4 py-2 rounded-xl shadow-lg flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-check"></i> 100% Moliyaviy kafolat
+                        </div>
+
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Oylik moliyaviy holat</p>
+                                <h3 class="font-heading font-bold text-lg text-white">Soliq va Hisobotlar Nazorati</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-semibold">Faol</span>
+                        </div>
+
+                        <!-- Simulated Metrics -->
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-2xl bg-navy-900/80 border border-slate-700/50 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-white">QQS va Foyda solig'i</p>
+                                        <p class="text-xs text-slate-400">My.soliq.uz orqali topshirildi</p>
+                                    </div>
+                                </div>
+                                <span class="text-emerald-400 text-sm font-bold"><i class="fa-solid fa-circle-check"></i> Tayyor</span>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-navy-900/80 border border-slate-700/50 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center">
+                                        <i class="fa-solid fa-users-gear"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-white">Ish haqi va INPS hisobi</p>
+                                        <p class="text-xs text-slate-400">1C Buxgalteriya 8.3 bazasi</p>
+                                    </div>
+                                </div>
+                                <span class="text-emerald-400 text-sm font-bold"><i class="fa-solid fa-circle-check"></i> Tayyor</span>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs text-emerald-300 font-medium">Soliq yukini qonuniy tejash</span>
+                                    <span class="text-sm font-bold text-emerald-400">+24.5%</span>
+                                </div>
+                                <div class="w-full bg-navy-950 rounded-full h-2">
+                                    <div class="bg-emerald-400 h-2 rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-400">
+                            <span>Tizimlar: 1C, Didox, Faktura.uz</span>
+                            <span class="text-white font-medium">24/7 Shaxsiy buxgalter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 2. XIZMATLAR (SERVICES) ==================== -->
+    <section id="xizmatlar" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Bizning xizmatlar</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900 mt-2">
+                    Biznesingiz uchun kompleks buxgalteriya yechimlari
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Kichik startaplardan tortib yirik ishlab chiqarish korxonalarigacha barcha moliyaviy va soliq jarayonlarini professional tarzda boshqaramiz.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-3">Buxgalteriya hisobini yuritish</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Birlamchi hujjatlarni qayta ishlash, 1C bazasini yuritish, bank-mijoz operatsiyalari, debitor va kreditor qarzdorliklarni doimiy nazorat qilish.
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Buxgalteriya hisobini yuritish')" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+                        Buyurtma berish <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-3">Soliq hisobotlari va optimallashtirish</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            QQS, Foyda solig'i va Aylanmadan olinadigan soliq hisobotlarini o'z vaqtida topshirish, soliq imtiyozlaridan foydalanish va soliq yukini qonuniy kamaytirish.
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Soliq hisobotlari va optimallashtirish')" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+                        Buyurtma berish <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-3">Kadrlar hisobi va ish haqi (HR)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Mehnat shartnomalari, my.mehnat.uz tizimida ro'yxatdan o'tkazish, oylik ish haqi, ta'til pullari, kasallik varaqalari va JShDS/INPS hisob-kitoblari.
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Kadrlar hisobi va ish haqi (HR/Payroll)')" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+                        Buyurtma berish <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-3">Moliyaviy audit va tahlil</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Avvalgi davr buxgalteriya bazasini tekshirish, xato va kamchiliklarni aniqlash, soliq tekshiruvlariga tayyorgarlik va rahbariyat uchun boshqaruv hisobotlari (P&L, CashFlow).
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Moliyaviy audit va tahlil')" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+                        Buyurtma berish <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-3">Korxonalarni ro'yxatdan o'tkazish</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            MChJ, YaTT va XK ochish, ta'sis hujjatlarini tayyorlash, ustav fondini shakllantirish, korxonani qayta tashkil etish yoki qonuniy tugatish (likvidatsiya) xizmatlari.
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Korxonalarni ro\'yxatdan o\'tkazish va qayta tashkil etish')" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+                        Buyurtma berish <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6: Restoration -->
+                <div class="bg-gradient-to-br from-navy-900 to-navy-800 rounded-3xl p-8 text-white shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-rotate"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-3">Buxgalteriyani tiklash</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Hisob-kitoblar to'xtab qolgan yoki xatolar to'planib qolgan korxonalar uchun 1C bazasini noldan tiklash va soliq organlari bilan solishtirma dalolatnomalarni to'g'rilash.
+                        </p>
+                    </div>
+                    <a href="#aloqa" onclick="selectService('Buxgalteriyani tiklash')" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold text-sm transition-colors">
+                        Bepul diagnostika olish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. BIZ HAQIMIZDA / AFZALLIKLARIMIZ ==================== -->
+    <section id="afzalliklar" class="py-20 lg:py-28 bg-white border-y border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Image / Stats Grid -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="bg-navy-900 text-white p-6 sm:p-8 rounded-3xl">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h4 class="font-heading font-extrabold text-3xl sm:text-4xl text-emerald-400">10+ yil</h4>
+                            <p class="text-slate-300 text-sm mt-2">O'zbekiston soliq qonunchiligi va moliya sohasida amaliy tajriba</p>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-3xl">
+                            <div class="w-12 h-12 rounded-2xl bg-navy-900 text-white flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <h4 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900">100%</h4>
+                            <p class="text-slate-600 text-sm mt-2">Shartnoma asosida tijorat siri va maxfiylik kafolati (NDA)</p>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-3xl">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h4 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900">350+</h4>
+                            <p class="text-slate-600 text-sm mt-2">Savdo, IT, qurilish, tibbiyot va ishlab chiqarish mijozlari</p>
+                        </div>
+
+                        <div class="bg-emerald-600 text-white p-6 sm:p-8 rounded-3xl">
+                            <div class="w-12 h-12 rounded-2xl bg-white/20 text-white flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h4 class="font-heading font-extrabold text-2xl sm:text-3xl">Raqamli tizim</h4>
+                            <p class="text-emerald-50 text-sm mt-2">1C 8.3, Didox, My.soliq, E-aktiv, My.mehnat to'liq integratsiya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Nega aynan FinBalance?</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900 leading-tight">
+                        Shtatdagi bitta buxgalter o'rniga — butun bir moliyaviy jamoa
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Autsorsing buxgalteriya xizmati orqali siz ofis jihozlari, qimmat dasturlar va shtatdagi xodim soliqlaridan tejaysiz. Eng muhimi, bizning xatomiz tufayli kelib chiqqan har qanday jarima kompaniyamiz hisobidan qoplanadi.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Moliyaviy javobgarlik sug'urtalangan</h4>
+                                <p class="text-sm text-slate-600">Shartnomada barcha hisobotlar o'z vaqtida va xatosiz topshirilishi qat'iy kafolatlanadi.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Zamonaviy EDO va Soliq tizimlari</h4>
+                                <p class="text-sm text-slate-600">Didox, SoliqServis, Faktura.uz, 1C Bulutli baza va Internet-banking bilan tezkor ishlash.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Uzluksiz xizmat ko'rsatish</h4>
+                                <p class="text-sm text-slate-600">Buxgalteringiz ta'tilga chiqmaydi yoki kasal bo'lib qolmaydi — jamoamiz 12 oy davomida uzluksiz ishlaydi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Stack Pills -->
+                    <div class="pt-4">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Biz ishlaydigan tizimlar:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-bold border border-slate-200">1C: Buxgalteriya 8.3</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-bold border border-slate-200">My.soliq.uz</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-bold border border-slate-200">Didox.uz</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-bold border border-slate-200">My.mehnat.uz</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-bold border border-slate-200">E-Aktiv / E-Imtiyoz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. INTERAKTIV XIZMAT KALKULYATORI ==================== -->
+    <section id="kalkulyator" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Onlayn hisob-kitob</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl mt-2">
+                    Buxgalteriya xizmati narxini hisoblang
+                </h2>
+                <p class="text-slate-300 mt-3 text-base">
+                    Korxonangiz parametrlarini tanlang va taxminiy oylik xizmat narxini bir zumda bilib oling.
+                </p>
+            </div>
+
+            <div class="bg-navy-800/90 border border-slate-700/80 rounded-3xl p-6 sm:p-10 shadow-2xl max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <!-- Controls (Left 7 cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- 1. Korxona shakli -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-3">1. Tashkiliy-huquqiy shakl:</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" onclick="setCalcEntity('yatt')" id="btn-yatt" class="calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400">
+                                    <i class="fa-solid fa-user-tie"></i> YaTT (Yakka tadbirkor)
+                                </button>
+                                <button type="button" onclick="setCalcEntity('mchj')" id="btn-mchj" class="calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-emerald-500 bg-emerald-500/20 text-emerald-300">
+                                    <i class="fa-solid fa-building"></i> MChJ / XK / QK
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Soliq rejimi -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-3">2. Soliq rejimi:</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <button type="button" onclick="setCalcTax('aylanma')" id="btn-aylanma" class="calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-emerald-500 bg-emerald-500/20 text-emerald-300">
+                                    <span>Aylanmadan soliq (4%)</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </button>
+                                <button type="button" onclick="setCalcTax('qqs')" id="btn-qqs" class="calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400">
+                                    <span>QQS va Foyda solig'i</span>
+                                    <i class="fa-regular fa-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3. Oylik operatsiyalar soni -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <label for="ops-range" class="font-semibold text-slate-200">3. Oylik hujjatlar / operatsiyalar soni:</label>
+                                <span id="ops-value" class="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-lg">30 ta</span>
+                            </div>
+                            <input type="range" id="ops-range" min="0" max="200" step="10" value="30" oninput="calculatePrice()" class="w-full h-2 bg-navy-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>0 (Nol hisobot)</span>
+                                <span>50 ta</span>
+                                <span>100 ta</span>
+                                <span>200+ ta</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Xodimlar soni -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <label for="staff-range" class="font-semibold text-slate-200">4. Rasmiy xodimlar soni:</label>
+                                <span id="staff-value" class="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-lg">5 nafar</span>
+                            </div>
+                            <input type="range" id="staff-range" min="1" max="50" step="1" value="5" oninput="calculatePrice()" class="w-full h-2 bg-navy-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>1 nafar</span>
+                                <span>15 nafar</span>
+                                <span>30 nafar</span>
+                                <span>50+ nafar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Card (Right 5 cols) -->
+                    <div class="lg:col-span-5 bg-navy-950 border border-slate-700/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-semibold mb-3">
+                                Taxminiy oylik to'lov
+                            </span>
+                            <div class="flex items-baseline gap-2">
+                                <span id="calc-total-price" class="font-heading font-extrabold text-3xl sm:text-4xl text-white">1 850 000</span>
+                                <span class="text-slate-400 font-medium text-sm">so'm / oy</span>
+                            </div>
+                            <p id="calc-plan-hint" class="text-xs text-emerald-400 mt-2">
+                                Tavsiya etilgan tarif: Standart paket
+                            </p>
+                        </div>
+
+                        <div class="space-y-2.5 pt-4 border-t border-slate-800 text-xs sm:text-sm text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-emerald-400"></i>
+                                <span>Barcha soliq hisobotlarini topshirish</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-emerald-400"></i>
+                                <span>1C bazasini yuritish va saqlash</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-emerald-400"></i>
+                                <span>Birinchi oy uchun 20% chegirma</span>
+                            </div>
+                        </div>
+
+                        <a href="#aloqa" onclick="applyCalculatorToForm()" class="w-full py-3.5 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold text-sm text-center shadow-lg shadow-emerald-500/20 transition-all block">
+                            Shu narxda ariza qoldirish
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. TARIFLAR (PRICING) ==================== -->
+    <section id="tariflar" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Shaffof narxlar</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900 mt-2">
+                    Biznesingiz hajmiga mos tarif paketlari
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Yashirin to'lovlarsiz oylik obuna. Shartnoma imzolangandan so'ng narxlar o'zgarmasligi kafolatlanadi.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Plan 1: Startap -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-900 text-xs font-bold uppercase">Startap</span>
+                            <span class="text-xs text-slate-500">Kichik biznes uchun</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-navy-900">Boshlang'ich</h3>
+                        <p class="text-slate-500 text-sm mt-1">YaTT va yangi ochilgan MChJlar uchun ideal yechim</p>
+
+                        <div class="my-6 pb-6 border-b border-slate-100">
+                            <span class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900">1 200 000</span>
+                            <span class="text-slate-500 text-sm font-medium"> so'm/oy</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-600 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Aylanmadan olinadigan soliq rejimi</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Oyiga 25 tagacha birlamchi hujjatlar</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>3 nafargacha xodimlar ish haqi hisobi</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Oylik va choraklik soliq hisobotlari</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Telegram orqali tezkor maslahat</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#aloqa" onclick="selectService('Tarif: Startap (1 200 000 so\'m/oy)')" class="w-full py-3.5 px-6 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold text-sm text-center transition-colors">
+                        Tarifni tanlash
+                    </a>
+                </div>
+
+                <!-- Plan 2: Standart (Popular) -->
+                <div class="bg-navy-900 text-white rounded-3xl p-8 border-2 border-emerald-500 shadow-2xl relative flex flex-col justify-between lg:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-navy-950 text-xs font-extrabold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">
+                        Eng ommabop tanlov
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase">Standart</span>
+                            <span class="text-xs text-slate-400">O'rta biznes uchun</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white">Biznes Pro</h3>
+                        <p class="text-slate-400 text-sm mt-1">Faol savdo va xizmat ko'rsatish korxonalari uchun</p>
+
+                        <div class="my-6 pb-6 border-b border-slate-800">
+                            <span class="font-heading font-extrabold text-3xl sm:text-4xl text-white">2 800 000</span>
+                            <span class="text-slate-400 text-sm font-medium"> so'm/oy</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span><strong class="text-white">QQS va Foyda solig'i</strong> (umumiy tartib)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Oyiga 100 tagacha operatsiya va EHF (Didox)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>15 nafargacha xodim va HR hujjatlar</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Bank-mijoz to'lovlarini tayyorlash</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Shaxsiy bosh buxgalter biriktiriladi</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#aloqa" onclick="selectService('Tarif: Biznes Pro (2 800 000 so\'m/oy)')" class="w-full py-3.5 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold text-sm text-center shadow-lg shadow-emerald-500/25 transition-all">
+                        Tarifni tanlash
+                    </a>
+                </div>
+
+                <!-- Plan 3: Premium -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-xs font-bold uppercase">Premium</span>
+                            <span class="text-xs text-slate-500">Yirik korxonalar</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-navy-900">Korporativ</h3>
+                        <p class="text-slate-500 text-sm mt-1">Ishlab chiqarish, import-eksport va qurilish uchun</p>
+
+                        <div class="my-6 pb-6 border-b border-slate-100">
+                            <span class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900">5 500 000</span>
+                            <span class="text-slate-500 text-sm font-medium"> so'm/oy dan</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-slate-600 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Cheklanmagan hujjatlar va ombor hisobi</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Tashqi iqtisodiy faoliyat (Import/Eksport, GTD)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>50+ xodimlar uchun to'liq HR autsorsing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Oylik moliyaviy tahlil va CFO konsalting</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span>Soliq tekshiruvlarida bevosita himoya</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#aloqa" onclick="selectService('Tarif: Korporativ Premium (5 500 000+ so\'m/oy)')" class="w-full py-3.5 px-6 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold text-sm text-center transition-colors">
+                        Tarifni tanlash
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. MIJOZLAR FIKRI (TESTIMONIALS) ==================== -->
+    <section class="py-20 bg-white border-t border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Mijozlarimiz ishonchi</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900 mt-2">
+                    Hamkorlarimiz biz haqimizda nima deydi?
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200/80">
+                    <div class="flex text-amber-400 text-sm mb-4 gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-6">
+                        "Avval shtatdagi buxgalter xatosi tufayli soliqdan jarimaga tushgan edik. FinBalance jamoasi 2 yillik bazamizni 3 haftada tiklab berdi. Hozir 2 yildan beri xotirjam ishlayapmiz."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-navy-900 text-emerald-400 font-bold flex items-center justify-center">AK</div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Azizbek Karimov</h4>
+                            <p class="text-xs text-slate-500">"TexnoStroy Invest" MChJ direktori</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200/80">
+                    <div class="flex text-amber-400 text-sm mb-4 gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-6">
+                        "IT-park rezidenti sifatida soliq imtiyozlarini to'g'ri qo'llash va xorijiy eksport shartnomalarini rasmiylashtirishda juda katta yordam berishdi. Har doim aloqada va o'z ishining ustasi."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center">MR</div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Madina Rustamova</h4>
+                            <p class="text-xs text-slate-500">"CloudSoft Solutions" asoschisi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200/80">
+                    <div class="flex text-amber-400 text-sm mb-4 gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-6">
+                        "Import va QQS hisob-kitoblari juda murakkab edi. FinBalance mutaxassislari nafaqat hisobotlarni yuritadi, balki har oy menga tushunarli tilda foyda va xarajatlar tahlilini beradi."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-navy-900 text-emerald-400 font-bold flex items-center justify-center">JS</div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Jamshid Sulaymonov</h4>
+                            <p class="text-xs text-slate-500">"EuroMed Farm" MChJ rahbari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. KO'P BERILADIGAN SAVOLLAR (FAQ) ==================== -->
+    <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200/70">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Savol-javoblar</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-navy-900 mt-2">
+                    Ko'p beriladigan savollar
+                </h2>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <span>Masofaviy (autsorsing) buxgalteriya xizmati qanday ishlaydi?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Sizga shaxsiy bosh buxgalter biriktiriladi. Elektron hisob-fakturalar (Didox), bank ko'chirmalari va soliq kabineti bilan masofaviy ishlaymiz. Zarur hollarda birlamchi qog'oz hujjatlarni kuryerimiz olib ketadi yoki ofisimizda qabul qilamiz.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <span>Agar buxgalter xatosi tufayli soliq jarimasi kelsa, kim to'laydi?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Shartnomamizning alohida bandiga ko'ra, bizning aybimiz bilan hisobotlar kechiktirilsa yoki noto'g'ri hisoblansa, barcha penya va jarimalar 100% FinBalance kompaniyasi hisobidan qoplab beriladi.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <span>1C bazasi kimga tegishli bo'ladi va ma'lumotlar xavfsizligi qanday?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        1C bazasi to'liq sizning korxonangiz mulki hisoblanadi va istalgan vaqtda undan foydalanishingiz mumkin. Shartnoma imzolanishidan oldin ma'lumotlarni oshkor etmaslik (NDA) kelishuvi tuziladi.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <span>Faqat Toshkent shahridagi korxonalar bilan ishlaysizmi?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Yo'q, barcha soliq va elektron hujjat aylanishi tizimlari onlayn bo'lganligi sababli O'zbekistonning barcha viloyatlaridagi MChJ va YaTTlarga xizmat ko'rsatamiz.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. ALOQA (CONTACT & FORM) ==================== -->
+    <section id="aloqa" class="py-20 lg:py-28 bg-white border-t border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-900 rounded-3xl overflow-hidden shadow-2xl grid lg:grid-cols-12">
+                <!-- Contact Info (Left 5 cols) -->
+                <div class="lg:col-span-5 p-8 sm:p-12 bg-gradient-to-br from-navy-900 to-navy-950 text-white flex flex-col justify-between space-y-8">
+                    <div>
+                        <span class="text-emerald-400 font-semibold text-xs uppercase tracking-wider">Bog'lanish</span>
+                        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl mt-2">
+                            Bepul konsultatsiya uchun ariza qoldiring
+                        </h2>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Mutaxassisimiz 15 daqiqa ichida siz bilan bog'lanib, korxonangiz soliq holatini tahlil qiladi va eng maqbul yechimni taklif etadi.
+                        </p>
+                    </div>
+
+                    <div class="space-y-5 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-xs">Telefon raqamimiz:</p>
+                                <a href="tel:+998712005500" class="font-bold text-base text-white hover:text-emerald-400 transition-colors">+998 (71) 200-55-00</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-xs">Ofis manzili:</p>
+                                <p class="font-semibold text-white">Toshkent sh., Amir Temur shoh ko'chasi, 107B (Biznes markaz)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-xs">Ish vaqti:</p>
+                                <p class="font-semibold text-white">Dushanba – Shanba: 09:00 dan 18:00 gacha</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
+                        <a href="#aloqa" aria-label="Telegram" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-emerald-500 hover:text-navy-950 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                        </a>
+                        <a href="#aloqa" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-emerald-500 hover:text-navy-950 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="mailto:info@finbalance.uz" aria-label="Email" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-emerald-500 hover:text-navy-950 flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Application Form (Right 7 cols) -->
+                <div class="lg:col-span-7 p-8 sm:p-12 bg-white">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="user-name" class="block text-sm font-semibold text-navy-900 mb-2">Ismingiz *</label>
+                                <input type="text" id="user-name" required placeholder="Masalan: Sardor Alimov" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-navy-900 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all">
+                            </div>
+
+                            <div>
+                                <label for="user-phone" class="block text-sm font-semibold text-navy-900 mb-2">Telefon raqamingiz *</label>
+                                <input type="tel" id="user-phone" required placeholder="+998 90 123-45-67" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-navy-900 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="service-type" class="block text-sm font-semibold text-navy-900 mb-2">Qiziqtirgan xizmat turi</label>
+                            <select id="service-type" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-navy-900 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all">
+                                <option value="Bepul maslahat">Bepul dastlabki maslahat</option>
+                                <option value="Buxgalteriya hisobini yuritish">Buxgalteriya hisobini yuritish</option>
+                                <option value="Soliq hisobotlari va optimallashtirish">Soliq hisobotlari va optimallashtirish</option>
+                                <option value="Kadrlar hisobi va ish haqi (HR/Payroll)">Kadrlar hisobi va ish haqi (HR/Payroll)</option>
+                                <option value="Moliyaviy audit va tahlil">Moliyaviy audit va tahlil</option>
+                                <option value="Korxonalarni ro'yxatdan o'tkazish va qayta tashkil etish">Korxonalarni ro'yxatdan o'tkazish / tugatish</option>
+                                <option value="Buxgalteriyani tiklash">Buxgalteriyani tiklash</option>
+                                <option value="Tarif: Startap (1 200 000 so'm/oy)">Tarif: Startap (1 200 000 so'm/oy)</option>
+                                <option value="Tarif: Biznes Pro (2 800 000 so'm/oy)">Tarif: Biznes Pro (2 800 000 so'm/oy)</option>
+                                <option value="Tarif: Korporativ Premium (5 500 000+ so'm/oy)">Tarif: Korporativ Premium (5 500 000+ so'm/oy)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="user-message" class="block text-sm font-semibold text-navy-900 mb-2">Qo'shimcha xabar (ixtiyoriy)</label>
+                            <textarea id="user-message" rows="3" placeholder="Korxonangiz faoliyat turi yoki savolingizni yozing..." class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-navy-900 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-600/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>Arizani yuborish</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="text-xs text-slate-400 text-center">
+                            Tugmani bosish orqali shaxsiy ma'lumotlaringiz maxfiyligi kafolatlanadi.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-lg text-white">Fin<span class="text-emerald-400">Balance</span></span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#xizmatlar" class="hover:text-white transition-colors">Xizmatlar</a>
+                    <a href="#afzalliklar" class="hover:text-white transition-colors">Afzalliklar</a>
+                    <a href="#kalkulyator" class="hover:text-white transition-colors">Kalkulyator</a>
+                    <a href="#tariflar" class="hover:text-white transition-colors">Tariflar</a>
+                    <a href="#aloqa" class="hover:text-white transition-colors">Aloqa</a>
+                </div>
+
+                <p class="text-xs text-slate-500">
+                    © 2026 "FinBalance Consulting" MChJ. Barcha huquqlar himoyalangan.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SUCCESS MODAL ==================== -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/75 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-center shadow-2xl transform transition-all">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-5">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-heading font-extrabold text-2xl text-navy-900">Arizangiz qabul qilindi!</h3>
+            <p id="modal-summary" class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Rahmat! Bosh buxgalterimiz 15 daqiqa ichida ko'rsatilgan telefon raqamingizga qo'ng'iroq qiladi.
+            </p>
+            <button type="button" onclick="closeModal()" class="mt-6 w-full py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm transition-colors">
+                Tushunarli
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        // 1. Mobil menyuni ochish/yopish
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Interaktiv Kalkulyator holati va hisob-kitobi
+        let calcState = {
+            entity: 'mchj', // 'yatt' yoki 'mchj'
+            tax: 'aylanma', // 'aylanma' yoki 'qqs'
+            ops: 30,
+            staff: 5,
+            formattedPrice: '1 850 000'
+        };
+
+        function setCalcEntity(type) {
+            calcState.entity = type;
+            const yattBtn = document.getElementById('btn-yatt');
+            const mchjBtn = document.getElementById('btn-mchj');
+
+            if (type === 'yatt') {
+                yattBtn.className = 'calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-emerald-500 bg-emerald-500/20 text-emerald-300';
+                mchjBtn.className = 'calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400';
+            } else {
+                mchjBtn.className = 'calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-emerald-500 bg-emerald-500/20 text-emerald-300';
+                yattBtn.className = 'calc-entity-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all flex items-center justify-center gap-2 border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400';
+            }
+            calculatePrice();
+        }
+
+        function setCalcTax(taxType) {
+            calcState.tax = taxType;
+            const aylanmaBtn = document.getElementById('btn-aylanma');
+            const qqsBtn = document.getElementById('btn-qqs');
+
+            if (taxType === 'aylanma') {
+                aylanmaBtn.className = 'calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-emerald-500 bg-emerald-500/20 text-emerald-300';
+                aylanmaBtn.querySelector('i').className = 'fa-solid fa-circle-check';
+                qqsBtn.className = 'calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400';
+                qqsBtn.querySelector('i').className = 'fa-regular fa-circle';
+            } else {
+                qqsBtn.className = 'calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-emerald-500 bg-emerald-500/20 text-emerald-300';
+                qqsBtn.querySelector('i').className = 'fa-solid fa-circle-check';
+                aylanmaBtn.className = 'calc-tax-btn py-3 px-4 rounded-xl border text-sm font-bold transition-all text-left flex items-center justify-between border-slate-600 bg-navy-900/60 text-slate-300 hover:border-emerald-400';
+                aylanmaBtn.querySelector('i').className = 'fa-regular fa-circle';
+            }
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const ops = parseInt(document.getElementById('ops-range').value, 10);
+            const staff = parseInt(document.getElementById('staff-range').value, 10);
+
+            calcState.ops = ops;
+            calcState.staff = staff;
+
+            document.getElementById('ops-value').textContent = ops === 0 ? '0 (Nol hisobot)' : `${ops} ta`;
+            document.getElementById('staff-value').textContent = `${staff} nafar`;
+
+            // Baza narxi (so'mda)
+            let base = calcState.entity === 'yatt' ? 600000 : 1000000;
+
+            // Soliq rejimi qo'shimchasi
+            if (calcState.tax === 'qqs') {
+                base += 1200000;
+            }
+
+            // Operatsiyalar va xodimlar uchun qo'shimcha
+            const opsCost = ops * 15000;
+            const staffCost = Math.max(0, staff - 1) * 50000;
+
+            const total = base + opsCost + staffCost;
+            const formatted = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            calcState.formattedPrice = formatted;
+
+            document.getElementById('calc-total-price').textContent = formatted;
+
+            // Tavsiya etilgan tarif nomi
+            const hintEl = document.getElementById('calc-plan-hint');
+            if (total <= 1600000) {
+                hintEl.textContent = 'Tavsiya etilgan tarif: Startap paket';
+            } else if (total <= 3800000) {
+                hintEl.textContent = 'Tavsiya etilgan tarif: Biznes Pro (Standart)';
+            } else {
+                hintEl.textContent = 'Tavsiya etilgan tarif: Korporativ Premium';
+            }
+        }
+
+        // Kalkulyator natijasini formaga o'tkazish
+        function applyCalculatorToForm() {
+            const entityName = calcState.entity === 'yatt' ? 'YaTT' : 'MChJ';
+            const taxName = calcState.tax === 'aylanma' ? 'Aylanmadan soliq' : 'QQS va Foyda solig\'i';
+            const msgBox = document.getElementById('user-message');
+            msgBox.value = `Kalkulyator hisobi: ${entityName}, ${taxName}, ~${calcState.ops} ta operatsiya, ${calcState.staff} nafar xodim. Taxminiy narx: ${calcState.formattedPrice} so'm/oy.`;
+        }
+
+        // Xizmat yoki tarif kartochkasidan formaga avtomatik tanlash
+        function selectService(serviceName) {
+            const selectEl = document.getElementById('service-type');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value === serviceName) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // 3. FAQ Akkordeon
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
+
+            const isHidden = answer.classList.contains('hidden');
+
+            // Boshqalarini yopish
+            document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.faq-item i').forEach(ic => ic.classList.remove('rotate-180'));
+
+            if (isHidden) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // 4. Forma yuborish va Modal oyna
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('user-name').value.trim();
+            const phone = document.getElementById('user-phone').value.trim();
+
+            if (!name || !phone) return;
+
+            document.getElementById('modal-summary').textContent =
+                `Hurmatli ${name}, arizangiz muvaffaqiyatli yuborildi! Mutaxassisimiz 15 daqiqa ichida ${phone} raqamiga qo'ng'iroq qiladi.`;
+
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            document.getElementById('contact-form').reset();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Sahifa yuklanganda kalkulyatorni ishga tushirish
+        window.addEventListener('DOMContentLoaded', () => {
+            calculatePrice();
+        });
+    </script>
+</body>
+</html>
